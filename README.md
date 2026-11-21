@@ -16,24 +16,23 @@
 </p>
 
 <p>
-  <strong>Backend Engineer</strong> crafting reliable APIs, clean architecture, and scalable systems.<br />
-  <sub><em>Kỹ sư Backend chuyên xây dựng hệ thống API ổn định, kiến trúc sạch và dễ mở rộng — nhận dự án freelance &amp; outsource.</em></sub>
+  <strong>Backend Engineer</strong> crafting reliable APIs, clean architecture, and scalable systems for modern products.
 </p>
 
 <br />
 
-<img src="./assets/pillars.svg" alt="Core Focus" width="100%" />
+<img src="./assets/bento.svg" alt="Backend Capabilities" width="100%" />
 
 <br />
 <br />
 
-<!-- Thay đổi danh sách icon theo đúng Tech Stack thực tế của bạn (https://skillicons.dev) -->
+<!-- Customize icons to match your real stack (https://skillicons.dev) -->
 <p>
   <img src="https://skillicons.dev/icons?i=go,ts,nodejs,py,postgres,redis,docker,linux&theme=dark" alt="Tech Stack" />
 </p>
 
 <br />
 
-<sub>Available for freelance &amp; outsource collaboration · Sẵn sàng trao đổi và hợp tác dự án</sub>
+<sub>Available for freelance &amp; outsource collaboration worldwide.</sub>
 
 </div>
