@@ -55,83 +55,6 @@ body {
   gap: 22px;
 }
 
-.topbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-  transition: border-color 0.35s ease;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.brand-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-dot);
-  box-shadow: 0 0 10px var(--accent-glow);
-  transition: background-color 0.35s ease, box-shadow 0.35s ease;
-}
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-primary);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.12s ease, box-shadow 0.22s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--border-active);
-  background: var(--surface-hover);
-  box-shadow: 0 0 18px var(--accent-glow);
-}
-
-.theme-toggle:active {
-  transform: scale(0.97);
-}
-
-.toggle-swatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff 50%, #09090b 50%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-html[data-theme='crimson'] .toggle-swatch {
-  background: linear-gradient(135deg, #ff1e42 50%, #09090b 50%);
-  border-color: rgba(255, 30, 66, 0.8);
-  box-shadow: 0 0 10px rgba(255, 30, 66, 0.65);
-}
-
-.toggle-hint {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
 .profile-stack {
   width: 100%;
   display: flex;
@@ -140,7 +63,54 @@ html[data-theme='crimson'] .toggle-swatch {
   gap: 20px;
 }
 
-.hero-frame,
+.hero-frame {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(9, 9, 11, 0.48);
+  backdrop-filter: blur(6px);
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.36;
+  cursor: pointer;
+  transition: opacity 0.25s ease, border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  opacity: 1;
+  color: var(--text-primary);
+  border-color: var(--border-active);
+  background: rgba(12, 12, 16, 0.85);
+}
+
+.toggle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff1e42;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+html[data-theme='crimson'] .toggle-dot {
+  background: #ffffff;
+}
+
 .bento-frame,
 .divider-frame {
   width: 100%;
@@ -218,13 +188,11 @@ html[data-theme='crimson'] .toggle-swatch {
     gap: 16px;
   }
 
-  .topbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .theme-toggle {
-    justify-content: center;
+    right: 10px;
+    bottom: 8px;
+    padding: 4px 9px;
+    font-size: 9.5px;
   }
 
   .contact-row img {

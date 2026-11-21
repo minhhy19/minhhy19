@@ -2,8 +2,11 @@
 
 <img src="./assets/hero.svg" alt="Minh Hy — Backend Engineer" width="100%" />
 
-<br />
-<br />
+<p align="right">
+  <a href="./README.crimson.md" title="Switch to Red &amp; Black Theme">
+    <img src="./assets/switch-to-crimson.svg" alt="Crimson Theme" height="22" />
+  </a>
+</p>
 
 <p>
   <a href="https://www.linkedin.com/in/minh-hy-ph%E1%BA%A1m-bb28a5202/">

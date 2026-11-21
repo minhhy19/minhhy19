@@ -3,8 +3,7 @@
 
   var THEMES = {
     monochrome: {
-      label: 'Monochrome · B&W',
-      hint: 'Switch to Red & Black',
+      label: 'crimson',
       hero: './assets/hero.svg',
       linkedin: './assets/btn-linkedin.svg',
       email: './assets/btn-email.svg',
@@ -14,8 +13,7 @@
       badgeLogo: 'FFFFFF',
     },
     crimson: {
-      label: 'Crimson · Red & Black',
-      hint: 'Switch to Black & White',
+      label: 'monochrome',
       hero: './assets/hero-crimson.svg',
       linkedin: './assets/btn-linkedin-crimson.svg',
       email: './assets/btn-email-crimson.svg',
