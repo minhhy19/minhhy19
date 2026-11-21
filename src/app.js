@@ -1,17 +1,8 @@
 (function () {
-  var STORAGE_KEY = 'minhhy-profile-theme';
+  var STORAGE_KEY = 'minhhy-profile-theme-v2';
+  var DEFAULT_THEME = 'crimson';
 
   var THEMES = {
-    monochrome: {
-      label: 'crimson',
-      hero: './assets/hero.svg',
-      linkedin: './assets/btn-linkedin.svg',
-      email: './assets/btn-email.svg',
-      divider: './assets/divider.svg',
-      bento: './assets/bento.svg',
-      badgeBg: '09090B',
-      badgeLogo: 'FFFFFF',
-    },
     crimson: {
       label: 'monochrome',
       hero: './assets/hero-crimson.svg',
@@ -21,6 +12,16 @@
       bento: './assets/bento-crimson.svg',
       badgeBg: '140A0F',
       badgeLogo: 'FF1E42',
+    },
+    monochrome: {
+      label: 'crimson',
+      hero: './assets/hero.svg',
+      linkedin: './assets/btn-linkedin.svg',
+      email: './assets/btn-email.svg',
+      divider: './assets/divider.svg',
+      bento: './assets/bento.svg',
+      badgeBg: '09090B',
+      badgeLogo: 'FFFFFF',
     },
   };
 
@@ -36,7 +37,7 @@
   ];
 
   function applyTheme(themeKey) {
-    var key = THEMES[themeKey] ? themeKey : 'monochrome';
+    var key = THEMES[themeKey] ? themeKey : DEFAULT_THEME;
     var cfg = THEMES[key];
 
     document.documentElement.setAttribute('data-theme', key);
@@ -48,7 +49,6 @@
     var bentoImg = document.getElementById('img-bento');
     var toggleBtn = document.getElementById('theme-toggle');
     var toggleLabel = document.getElementById('toggle-label');
-    var toggleHint = document.getElementById('toggle-hint');
     var stackRow = document.getElementById('tech-stack');
 
     if (heroImg) heroImg.src = cfg.hero;
@@ -57,8 +57,7 @@
     if (divImg) divImg.src = cfg.divider;
     if (bentoImg) bentoImg.src = cfg.bento;
     if (toggleLabel) toggleLabel.textContent = cfg.label;
-    if (toggleHint) toggleHint.textContent = cfg.hint;
-    if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(key === 'crimson'));
+    if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(key === 'monochrome'));
 
     if (stackRow) {
       stackRow.innerHTML = STACK.map(function (item) {
@@ -78,23 +77,22 @@
     try {
       localStorage.setItem(STORAGE_KEY, key);
     } catch (_) {
-      // Ignore storage access restrictions in private/file contexts
+      // Ignore storage access restrictions
     }
   }
 
   function init() {
-    // Always default to monochrome (Black & White) unless user explicitly saved crimson
-    var saved = 'monochrome';
+    var initial = DEFAULT_THEME;
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
       if (stored === 'crimson' || stored === 'monochrome') {
-        saved = stored;
+        initial = stored;
       }
     } catch (_) {
-      saved = 'monochrome';
+      initial = DEFAULT_THEME;
     }
 
-    applyTheme(saved);
+    applyTheme(initial);
 
     var toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
