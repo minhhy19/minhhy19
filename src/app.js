@@ -1,29 +1,6 @@
 (function () {
-  var STORAGE_KEY = 'minhhy-profile-theme-v2';
+  var STORAGE_KEY = 'minhhy-profile-theme-v3';
   var DEFAULT_THEME = 'crimson';
-
-  var THEMES = {
-    crimson: {
-      label: 'monochrome',
-      hero: './assets/hero-crimson.svg',
-      linkedin: './assets/btn-linkedin-crimson.svg',
-      email: './assets/btn-email-crimson.svg',
-      divider: './assets/divider-crimson.svg',
-      bento: './assets/bento-crimson.svg',
-      badgeBg: '140A0F',
-      badgeLogo: 'FF1E42',
-    },
-    monochrome: {
-      label: 'crimson',
-      hero: './assets/hero.svg',
-      linkedin: './assets/btn-linkedin.svg',
-      email: './assets/btn-email.svg',
-      divider: './assets/divider.svg',
-      bento: './assets/bento.svg',
-      badgeBg: '09090B',
-      badgeLogo: 'FFFFFF',
-    },
-  };
 
   var STACK = [
     { name: 'Go', logo: 'go' },
@@ -36,42 +13,34 @@
     { name: 'Linux', logo: 'linux' },
   ];
 
-  function applyTheme(themeKey) {
-    var key = THEMES[themeKey] ? themeKey : DEFAULT_THEME;
-    var cfg = THEMES[key];
+  function renderStackBadges(containerId, bgHex, logoHex) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = STACK.map(function (item) {
+      var url =
+        'https://img.shields.io/badge/' +
+        encodeURIComponent(item.name) +
+        '-' +
+        bgHex +
+        '?style=for-the-badge&logo=' +
+        item.logo +
+        '&logoColor=' +
+        logoHex;
+      return '<img src="' + url + '" alt="' + item.name + '" />';
+    }).join('');
+  }
 
+  function setTheme(themeKey) {
+    var key = themeKey === 'monochrome' ? 'monochrome' : DEFAULT_THEME;
     document.documentElement.setAttribute('data-theme', key);
 
-    var heroImg = document.getElementById('img-hero');
-    var liImg = document.getElementById('img-linkedin');
-    var emImg = document.getElementById('img-email');
-    var divImg = document.getElementById('img-divider');
-    var bentoImg = document.getElementById('img-bento');
-    var toggleBtn = document.getElementById('theme-toggle');
     var toggleLabel = document.getElementById('toggle-label');
-    var stackRow = document.getElementById('tech-stack');
-
-    if (heroImg) heroImg.src = cfg.hero;
-    if (liImg) liImg.src = cfg.linkedin;
-    if (emImg) emImg.src = cfg.email;
-    if (divImg) divImg.src = cfg.divider;
-    if (bentoImg) bentoImg.src = cfg.bento;
-    if (toggleLabel) toggleLabel.textContent = cfg.label;
-    if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(key === 'monochrome'));
-
-    if (stackRow) {
-      stackRow.innerHTML = STACK.map(function (item) {
-        var url =
-          'https://img.shields.io/badge/' +
-          encodeURIComponent(item.name) +
-          '-' +
-          cfg.badgeBg +
-          '?style=for-the-badge&logo=' +
-          item.logo +
-          '&logoColor=' +
-          cfg.badgeLogo;
-        return '<img src="' + url + '" alt="' + item.name + '" />';
-      }).join('');
+    var toggleBtn = document.getElementById('theme-toggle');
+    if (toggleLabel) {
+      toggleLabel.textContent = key === 'crimson' ? 'monochrome' : 'crimson';
+    }
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-pressed', String(key === 'monochrome'));
     }
 
     try {
@@ -81,7 +50,16 @@
     }
   }
 
+  function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'crimson' ? 'monochrome' : 'crimson');
+  }
+
   function init() {
+    // Pre-mount both badge layers once so switching crossfades instantaneously with zero flicker
+    renderStackBadges('stack-crimson', '140A0F', 'FF1E42');
+    renderStackBadges('stack-mono', '09090B', 'FFFFFF');
+
     var initial = DEFAULT_THEME;
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
@@ -92,15 +70,21 @@
       initial = DEFAULT_THEME;
     }
 
-    applyTheme(initial);
+    setTheme(initial);
 
     var toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
-      toggleBtn.addEventListener('click', function () {
-        var current = document.documentElement.getAttribute('data-theme');
-        applyTheme(current === 'crimson' ? 'monochrome' : 'crimson');
-      });
+      toggleBtn.addEventListener('click', toggleTheme);
     }
+
+    // Convenient keyboard shortcut: press "T" to crossfade themes
+    document.addEventListener('keydown', function (e) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 't' || e.key === 'T') {
+        toggleTheme();
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
