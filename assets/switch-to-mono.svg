@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 22" width="118" height="22" role="img" aria-label="Switch to Monochrome Theme">
+  <rect x="0.6" y="0.6" width="116.8" height="20.8" rx="10.4" fill="none" stroke="#71717A" stroke-opacity="0.34" stroke-width="0.9" />
+  <circle cx="14" cy="11" r="2.8" fill="#A1A1AA" fill-opacity="0.82" />
+  <text x="23" y="14.2" fill="#71717A" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10" font-weight="500" letter-spacing="0.4">monochrome ↗</text>
+</svg>
+
