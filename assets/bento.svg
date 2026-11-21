@@ -1,210 +1,214 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 236" width="900" height="236" role="img" aria-label="Backend Capabilities Bento Grid">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" height="240" role="img" aria-label="Backend Capabilities Bento Grid">
   <defs>
     <style>
-      .bar-1 { animation: eq 2.6s ease-in-out infinite; transform-origin: 410px 88px; }
-      .bar-2 { animation: eq 2.6s ease-in-out -0.45s infinite; transform-origin: 428px 88px; }
-      .bar-3 { animation: eq 2.6s ease-in-out -0.9s infinite; transform-origin: 446px 88px; }
-      .bar-4 { animation: eq 2.6s ease-in-out -1.35s infinite; transform-origin: 464px 88px; }
-      .bar-5 { animation: eq 2.6s ease-in-out -1.8s infinite; transform-origin: 482px 88px; }
-      .bar-6 { animation: eq 2.6s ease-in-out -2.2s infinite; transform-origin: 500px 88px; }
+      .bar-1 { animation: eq 2.4s ease-in-out infinite; transform-origin: 410px 90px; }
+      .bar-2 { animation: eq 2.4s ease-in-out -0.4s infinite; transform-origin: 428px 90px; }
+      .bar-3 { animation: eq 2.4s ease-in-out -0.8s infinite; transform-origin: 446px 90px; }
+      .bar-4 { animation: eq 2.4s ease-in-out -1.2s infinite; transform-origin: 464px 90px; }
+      .bar-5 { animation: eq 2.4s ease-in-out -1.6s infinite; transform-origin: 482px 90px; }
+      .bar-6 { animation: eq 2.4s ease-in-out -2.0s infinite; transform-origin: 500px 90px; }
       .avail-ring {
-        animation: availPulse 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+        animation: availPulse 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
         transform-origin: 596px 36px;
       }
-      .step-1 { animation: stepGlow 4.2s ease-in-out 0s infinite; }
-      .step-2 { animation: stepGlow 4.2s ease-in-out 1.4s infinite; }
-      .step-3 { animation: stepGlow 4.2s ease-in-out 2.8s infinite; }
+      .petal-drift {
+        animation: petalSway 7.5s ease-in-out infinite alternate;
+        transform-origin: 846px 56px;
+      }
+      .step-1 { animation: stepGlow 4.0s ease-in-out 0s infinite; }
+      .step-2 { animation: stepGlow 4.0s ease-in-out 1.33s infinite; }
+      .step-3 { animation: stepGlow 4.0s ease-in-out 2.66s infinite; }
       .pipe-beam {
-        stroke-dasharray: 28 160;
-        animation: beamRun 2.8s linear infinite;
+        stroke-dasharray: 32 160;
+        animation: beamRun 2.6s linear infinite;
       }
 
       @keyframes eq {
-        0%, 100% { transform: scaleY(0.55); opacity: 0.55; }
+        0%, 100% { transform: scaleY(0.48); opacity: 0.55; }
         50%      { transform: scaleY(1); opacity: 1; }
       }
       @keyframes availPulse {
-        0%   { transform: scale(0.9); opacity: 0.7; }
-        70%  { transform: scale(2.6); opacity: 0; }
-        100% { transform: scale(2.6); opacity: 0; }
+        0%   { transform: scale(0.9); opacity: 0.75; }
+        70%  { transform: scale(2.7); opacity: 0; }
+        100% { transform: scale(2.7); opacity: 0; }
+      }
+      @keyframes petalSway {
+        0%   { transform: translate(0px, 0px) rotate(-6deg); opacity: 0.55; }
+        100% { transform: translate(-8px, 6px) rotate(10deg); opacity: 0.85; }
       }
       @keyframes stepGlow {
-        0%, 100% { opacity: 0.55; }
+        0%, 100% { opacity: 0.52; }
         30%      { opacity: 1; }
       }
       @keyframes beamRun {
-        from { stroke-dashoffset: 188; }
+        from { stroke-dashoffset: 192; }
         to   { stroke-dashoffset: 0; }
       }
     </style>
 
     <linearGradient id="bentoBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D1426" />
-      <stop offset="100%" stop-color="#080D1A" />
+      <stop offset="0%" stop-color="#100D14" />
+      <stop offset="100%" stop-color="#07070C" />
     </linearGradient>
 
-    <linearGradient id="topCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
-      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#818CF8" stop-opacity="0" />
+    <linearGradient id="topCrimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1E42" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FF1E42" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="topSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FDA4AF" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
     </linearGradient>
 
     <linearGradient id="topEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#34D399" stop-opacity="0" />
-      <stop offset="50%" stop-color="#34D399" stop-opacity="0.92" />
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#34D399" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
     </linearGradient>
 
-    <linearGradient id="topViolet" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818CF8" stop-opacity="0" />
-      <stop offset="50%" stop-color="#C084FC" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0" />
-    </linearGradient>
-
-    <linearGradient id="topTeal" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0" />
-      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
-    </linearGradient>
-
-    <radialGradient id="auraCyan" cx="85%" cy="20%" r="65%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.14" />
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    <radialGradient id="auraCrimson" cx="85%" cy="22%" r="68%">
+      <stop offset="0%" stop-color="#E11D48" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#E11D48" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="auraEmerald" cx="85%" cy="25%" r="70%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.16" />
-      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    <radialGradient id="auraRuby" cx="82%" cy="88%" r="76%">
+      <stop offset="0%" stop-color="#FF1E42" stop-opacity="0.20" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="auraViolet" cx="82%" cy="88%" r="75%">
-      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.16" />
-      <stop offset="100%" stop-color="#A855F7" stop-opacity="0" />
-    </radialGradient>
-
-    <radialGradient id="auraTeal" cx="88%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.13" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    <radialGradient id="auraAsh" cx="88%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0" />
     </radialGradient>
 
     <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.45" />
+      <stop offset="0%" stop-color="#FF1E42" />
+      <stop offset="65%" stop-color="#E11D48" stop-opacity="0.82" />
+      <stop offset="100%" stop-color="#881337" stop-opacity="0.35" />
     </linearGradient>
 
     <linearGradient id="splineArea" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.24" />
-      <stop offset="100%" stop-color="#A855F7" stop-opacity="0" />
+      <stop offset="0%" stop-color="#FF1E42" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
     </linearGradient>
 
     <linearGradient id="splineStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.65" />
-      <stop offset="55%" stop-color="#C084FC" />
-      <stop offset="100%" stop-color="#EC4899" />
+      <stop offset="0%" stop-color="#9F1239" stop-opacity="0.7" />
+      <stop offset="55%" stop-color="#FF1E42" />
+      <stop offset="100%" stop-color="#FFE4E6" />
     </linearGradient>
 
     <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="50%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#34D399" />
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#FF1E42" />
     </linearGradient>
 
-    <path id="perfCurve" d="M 1 228 C 75 225, 165 224, 232 213 C 276 205, 308 192, 335 174" />
+    <path id="perfCurve" d="M 1 232 C 75 229, 165 228, 232 217 C 276 208, 308 195, 335 176" />
 
-    <clipPath id="clipC1"><rect x="1" y="1" width="548" height="110" rx="18" /></clipPath>
-    <clipPath id="clipC2"><rect x="565" y="1" width="334" height="110" rx="18" /></clipPath>
-    <clipPath id="clipC3"><rect x="1" y="125" width="334" height="110" rx="18" /></clipPath>
-    <clipPath id="clipC4"><rect x="351" y="125" width="548" height="110" rx="18" /></clipPath>
+    <clipPath id="clipC1"><rect x="1" y="1" width="548" height="112" rx="18" /></clipPath>
+    <clipPath id="clipC2"><rect x="565" y="1" width="334" height="112" rx="18" /></clipPath>
+    <clipPath id="clipC3"><rect x="1" y="127" width="334" height="112" rx="18" /></clipPath>
+    <clipPath id="clipC4"><rect x="351" y="127" width="548" height="112" rx="18" /></clipPath>
   </defs>
 
   <!-- ==================== ROW 1, LEFT (WIDE): APIs & Architecture ==================== -->
   <g clip-path="url(#clipC1)">
-    <rect x="1" y="1" width="548" height="110" rx="18" fill="url(#bentoBg)" />
-    <rect x="1" y="1" width="548" height="110" fill="url(#auraCyan)" />
-    <rect x="90" y="1" width="370" height="2" rx="1" fill="url(#topCyan)" />
+    <rect x="1" y="1" width="548" height="112" rx="18" fill="url(#bentoBg)" />
+    <rect x="1" y="1" width="548" height="112" fill="url(#auraCrimson)" />
+    <rect x="90" y="1" width="370" height="2" rx="1" fill="url(#topCrimson)" />
 
-    <text x="26" y="34" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.1">CORE ARCHITECTURE</text>
-    <text x="26" y="62" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">APIs &amp; Backend Systems</text>
-    <text x="26" y="88" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Clean, resilient services built for long-term scale.</text>
+    <text x="26" y="34" fill="#FB7185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2">CORE ARCHITECTURE</text>
+    <text x="26" y="63" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">APIs &amp; Backend Systems</text>
+    <text x="26" y="89" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Clean, resilient services built for long-term scale.</text>
 
-    <!-- Animated throughput bars micro-graphic -->
-    <rect x="386" y="22" width="140" height="72" rx="12" fill="#070C18" fill-opacity="0.72" stroke="#1E293B" stroke-width="1" />
-    <rect class="bar-1" x="405" y="54" width="9" height="28" rx="4.5" fill="url(#barGrad)" />
-    <rect class="bar-2" x="423" y="42" width="9" height="40" rx="4.5" fill="url(#barGrad)" />
-    <rect class="bar-3" x="441" y="48" width="9" height="34" rx="4.5" fill="url(#barGrad)" />
-    <rect class="bar-4" x="459" y="35" width="9" height="47" rx="4.5" fill="url(#barGrad)" />
-    <rect class="bar-5" x="477" y="45" width="9" height="37" rx="4.5" fill="url(#barGrad)" />
-    <rect class="bar-6" x="495" y="52" width="9" height="30" rx="4.5" fill="url(#barGrad)" />
+    <!-- Animated crimson signal bars -->
+    <rect x="386" y="21" width="140" height="74" rx="12" fill="#06060A" fill-opacity="0.80" stroke="#271923" stroke-width="1" />
+    <rect class="bar-1" x="405" y="55" width="9" height="28" rx="4.5" fill="url(#barGrad)" />
+    <rect class="bar-2" x="423" y="43" width="9" height="40" rx="4.5" fill="url(#barGrad)" />
+    <rect class="bar-3" x="441" y="49" width="9" height="34" rx="4.5" fill="url(#barGrad)" />
+    <rect class="bar-4" x="459" y="35" width="9" height="48" rx="4.5" fill="url(#barGrad)" />
+    <rect class="bar-5" x="477" y="46" width="9" height="37" rx="4.5" fill="url(#barGrad)" />
+    <rect class="bar-6" x="495" y="53" width="9" height="30" rx="4.5" fill="url(#barGrad)" />
   </g>
-  <rect x="1" y="1" width="548" height="110" rx="18" fill="none" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="1" y="1" width="548" height="112" rx="18" fill="none" stroke="#241B24" stroke-width="1.2" />
 
   <!-- ==================== ROW 1, RIGHT: Availability & Collaboration ==================== -->
   <g clip-path="url(#clipC2)">
-    <rect x="565" y="1" width="334" height="110" rx="18" fill="url(#bentoBg)" />
-    <rect x="565" y="1" width="334" height="110" fill="url(#auraEmerald)" />
+    <rect x="565" y="1" width="334" height="112" rx="18" fill="url(#bentoBg)" />
+    <rect x="565" y="1" width="334" height="112" fill="url(#auraAsh)" />
     <rect x="630" y="1" width="204" height="2" rx="1" fill="url(#topEmerald)" />
+
+    <!-- Ultra-subtle editorial Kanji watermark & floating crimson petal -->
+    <text x="878" y="64" text-anchor="end" fill="#FF1E42" fill-opacity="0.07" font-family="Hiragino Mincho ProN, YuMincho, serif" font-size="44" font-weight="700">東京</text>
+    <g class="petal-drift">
+      <path d="M 846 46 C 852 49, 854 57, 846 64 C 841 59, 841 51, 846 46 Z" fill="#FF1E42" fill-opacity="0.45" />
+    </g>
 
     <circle class="avail-ring" cx="596" cy="36" r="4" fill="none" stroke="#34D399" stroke-width="1.4" />
     <circle cx="596" cy="36" r="3.6" fill="#34D399" />
     <text x="610" y="40" fill="#6EE7B7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.0">AVAILABLE NOW</text>
 
-    <text x="592" y="66" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Freelance &amp; Outsource</text>
-    <text x="592" y="90" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Remote worldwide · Clear milestones</text>
+    <text x="592" y="67" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Freelance &amp; Outsource</text>
+    <text x="592" y="91" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Remote worldwide · Clear milestones</text>
   </g>
-  <rect x="565" y="1" width="334" height="110" rx="18" fill="none" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="565" y="1" width="334" height="112" rx="18" fill="none" stroke="#241B24" stroke-width="1.2" />
 
   <!-- ==================== ROW 2, LEFT: Data & Performance ==================== -->
   <g clip-path="url(#clipC3)">
-    <rect x="1" y="125" width="334" height="110" rx="18" fill="url(#bentoBg)" />
-    <rect x="1" y="125" width="334" height="110" fill="url(#auraViolet)" />
-    <rect x="66" y="125" width="204" height="2" rx="1" fill="url(#topViolet)" />
+    <rect x="1" y="127" width="334" height="112" rx="18" fill="url(#bentoBg)" />
+    <rect x="1" y="127" width="334" height="112" fill="url(#auraRuby)" />
+    <rect x="66" y="127" width="204" height="2" rx="1" fill="url(#topSilver)" />
 
-    <!-- Clean rising spline along bottom edge with animated traveling glow pulse -->
-    <path d="M 1 228 C 75 225, 165 224, 232 213 C 276 205, 308 192, 335 174 L 335 236 L 1 236 Z" fill="url(#splineArea)" />
+    <!-- Rising scarlet performance spline with glowing ember -->
+    <path d="M 1 232 C 75 229, 165 228, 232 217 C 276 208, 308 195, 335 176 L 335 240 L 1 240 Z" fill="url(#splineArea)" />
     <use href="#perfCurve" fill="none" stroke="url(#splineStroke)" stroke-width="1.8" stroke-linecap="round" />
     <g opacity="0">
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="3.6s" repeatCount="indefinite" />
-      <circle r="6" fill="#C084FC" fill-opacity="0.35">
-        <animateMotion dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"><mpath href="#perfCurve" /></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="3.4s" repeatCount="indefinite" />
+      <circle r="6.5" fill="#FF1E42" fill-opacity="0.40">
+        <animateMotion dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"><mpath href="#perfCurve" /></animateMotion>
       </circle>
-      <circle r="2.4" fill="#FAF5FF">
-        <animateMotion dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"><mpath href="#perfCurve" /></animateMotion>
+      <circle r="2.4" fill="#FFF1F2">
+        <animateMotion dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"><mpath href="#perfCurve" /></animateMotion>
       </circle>
     </g>
 
-    <text x="26" y="155" fill="#C084FC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.1">SPEED &amp; SCALE</text>
-    <text x="26" y="182" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Data &amp; Performance</text>
-    <text x="26" y="205" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Modeling, caching &amp; query tuning.</text>
+    <text x="26" y="157" fill="#FDA4AF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2">SPEED &amp; SCALE</text>
+    <text x="26" y="184" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Data &amp; Performance</text>
+    <text x="26" y="208" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Modeling, caching &amp; query tuning.</text>
   </g>
-  <rect x="1" y="125" width="334" height="110" rx="18" fill="none" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="1" y="127" width="334" height="112" rx="18" fill="none" stroke="#241B24" stroke-width="1.2" />
 
   <!-- ==================== ROW 2, RIGHT (WIDE): Production Delivery ==================== -->
   <g clip-path="url(#clipC4)">
-    <rect x="351" y="125" width="548" height="110" rx="18" fill="url(#bentoBg)" />
-    <rect x="351" y="125" width="548" height="110" fill="url(#auraTeal)" />
-    <rect x="440" y="125" width="370" height="2" rx="1" fill="url(#topTeal)" />
+    <rect x="351" y="127" width="548" height="112" rx="18" fill="url(#bentoBg)" />
+    <rect x="351" y="127" width="548" height="112" fill="url(#auraCrimson)" />
+    <rect x="440" y="127" width="370" height="2" rx="1" fill="url(#topCrimson)" />
 
-    <text x="376" y="155" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.1">END-TO-END DELIVERY</text>
-    <text x="376" y="182" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Production Ready Handoff</text>
-    <text x="376" y="206" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Docker, CI/CD &amp; maintainable codebases.</text>
+    <text x="376" y="157" fill="#FB7185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2">END-TO-END DELIVERY</text>
+    <text x="376" y="184" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" letter-spacing="-0.3">Production Ready Handoff</text>
+    <text x="376" y="209" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Docker, CI/CD &amp; maintainable codebases.</text>
 
-    <!-- Animated Design -> Build -> Ship flow pill -->
-    <rect x="692" y="146" width="184" height="68" rx="12" fill="#070C18" fill-opacity="0.72" stroke="#1E293B" stroke-width="1" />
-    <line x1="726" y1="172" x2="842" y2="172" stroke="#1E293B" stroke-width="2" stroke-linecap="round" />
-    <line class="pipe-beam" x1="726" y1="172" x2="842" y2="172" stroke="url(#pipeGrad)" stroke-width="2.2" stroke-linecap="round" />
+    <!-- Animated crimson-silver pipeline -->
+    <rect x="692" y="147" width="184" height="70" rx="12" fill="#06060A" fill-opacity="0.80" stroke="#271923" stroke-width="1" />
+    <line x1="726" y1="174" x2="842" y2="174" stroke="#271923" stroke-width="2" stroke-linecap="round" />
+    <line class="pipe-beam" x1="726" y1="174" x2="842" y2="174" stroke="url(#pipeGrad)" stroke-width="2.2" stroke-linecap="round" />
 
     <g class="step-1">
-      <circle cx="726" cy="172" r="5" fill="#0F172A" stroke="#38BDF8" stroke-width="2" />
-      <text x="726" y="196" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Design</text>
+      <circle cx="726" cy="174" r="5" fill="#0A0A10" stroke="#F8FAFC" stroke-width="2" />
+      <text x="726" y="198" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Design</text>
     </g>
     <g class="step-2">
-      <circle cx="784" cy="172" r="5" fill="#0F172A" stroke="#818CF8" stroke-width="2" />
-      <text x="784" y="196" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Build</text>
+      <circle cx="784" cy="174" r="5" fill="#0A0A10" stroke="#FB7185" stroke-width="2" />
+      <text x="784" y="198" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Build</text>
     </g>
     <g class="step-3">
-      <circle cx="842" cy="172" r="5" fill="#0F172A" stroke="#34D399" stroke-width="2" />
-      <text x="842" y="196" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Ship</text>
+      <circle cx="842" cy="174" r="5" fill="#0A0A10" stroke="#FF1E42" stroke-width="2" />
+      <text x="842" y="198" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600">Ship</text>
     </g>
   </g>
-  <rect x="351" y="125" width="548" height="110" rx="18" fill="none" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="351" y="127" width="548" height="112" rx="18" fill="none" stroke="#241B24" stroke-width="1.2" />
 </svg>

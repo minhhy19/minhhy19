@@ -19,6 +19,8 @@
   <strong>Backend Engineer</strong> crafting reliable APIs, clean architecture, and scalable systems for modern products.
 </p>
 
+<img src="./assets/divider.svg" alt="" width="100%" />
+
 <br />
 
 <img src="./assets/bento.svg" alt="Backend Capabilities" width="100%" />
