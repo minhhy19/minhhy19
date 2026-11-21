@@ -1,0 +1,402 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" role="img" aria-label="Minh Hy — Backend Engineer">
+  <defs>
+    <style>
+      .aurora-1 {
+        animation: drift1 14s ease-in-out infinite alternate;
+        transform-origin: 700px 60px;
+      }
+      .aurora-2 {
+        animation: drift2 17s ease-in-out infinite alternate;
+        transform-origin: 760px 230px;
+      }
+      .aurora-3 {
+        animation: drift3 16s ease-in-out infinite alternate;
+        transform-origin: 200px 250px;
+      }
+      .sheen {
+        animation: sweep 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .ripple {
+        animation: pulseRing 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+        transform-origin: 70px 56px;
+      }
+      .orbit-cw {
+        animation: spinCW 28s linear infinite;
+        transform-origin: 700px 140px;
+      }
+      .orbit-ccw {
+        animation: spinCCW 16s linear infinite;
+        transform-origin: 700px 140px;
+      }
+      .core-breathe {
+        animation: breathe 4.8s ease-in-out infinite;
+        transform-origin: 700px 140px;
+      }
+      .float-a { animation: floatY 5.4s ease-in-out infinite; }
+      .float-b { animation: floatY 6.2s ease-in-out -1.8s infinite; }
+      .float-c { animation: floatY 5.8s ease-in-out -3.1s infinite; }
+      .float-d { animation: floatY 6.6s ease-in-out -0.9s infinite; }
+      .twinkle-1 { animation: twinkle 3.6s ease-in-out infinite; }
+      .twinkle-2 { animation: twinkle 4.4s ease-in-out -1.4s infinite; }
+      .twinkle-3 { animation: twinkle 5.1s ease-in-out -2.6s infinite; }
+
+      .phrase-1 { animation: kinetic1 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+      .phrase-2 { opacity: 0; animation: kinetic2 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+      .phrase-3 { opacity: 0; animation: kinetic3 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+      .wave-drift-1 { animation: waveSlide 11s ease-in-out infinite alternate; }
+      .wave-drift-2 { animation: waveSlideRev 14s ease-in-out infinite alternate; }
+
+      @keyframes waveSlide {
+        0%   { transform: translateX(-18px); }
+        100% { transform: translateX(18px); }
+      }
+      @keyframes waveSlideRev {
+        0%   { transform: translateX(16px); }
+        100% { transform: translateX(-16px); }
+      }
+
+      @keyframes drift1 {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(-42px, 28px) scale(1.12); }
+      }
+      @keyframes drift2 {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(34px, -32px) scale(1.08); }
+      }
+      @keyframes drift3 {
+        0%   { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(48px, -18px) scale(1.14); }
+      }
+      @keyframes sweep {
+        0%   { transform: translateX(-340px); opacity: 0; }
+        12%  { opacity: 1; }
+        42%  { transform: translateX(1180px); opacity: 0; }
+        100% { transform: translateX(1180px); opacity: 0; }
+      }
+      @keyframes pulseRing {
+        0%   { transform: scale(0.9); opacity: 0.75; }
+        70%  { transform: scale(2.8); opacity: 0; }
+        100% { transform: scale(2.8); opacity: 0; }
+      }
+      @keyframes spinCW {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+      @keyframes spinCCW {
+        from { transform: rotate(360deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @keyframes breathe {
+        0%, 100% { transform: scale(1); opacity: 0.92; }
+        50%      { transform: scale(1.06); opacity: 1; }
+      }
+      @keyframes floatY {
+        0%, 100% { transform: translateY(0px); }
+        50%      { transform: translateY(-5px); }
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.22; }
+        50%      { opacity: 0.88; }
+      }
+
+      /* Phrase 1 starts fully visible at t=0 for crisp static and first-frame rendering */
+      @keyframes kinetic1 {
+        0%, 27%   { opacity: 1; transform: translateY(0px); }
+        33%, 93%  { opacity: 0; transform: translateY(-12px); }
+        94%       { opacity: 0; transform: translateY(12px); }
+        100%      { opacity: 1; transform: translateY(0px); }
+      }
+      @keyframes kinetic2 {
+        0%, 29%   { opacity: 0; transform: translateY(12px); }
+        35%, 61%  { opacity: 1; transform: translateY(0px); }
+        67%, 100% { opacity: 0; transform: translateY(-12px); }
+      }
+      @keyframes kinetic3 {
+        0%, 63%   { opacity: 0; transform: translateY(12px); }
+        69%, 94%  { opacity: 1; transform: translateY(0px); }
+        100%      { opacity: 0; transform: translateY(-12px); }
+      }
+    </style>
+
+    <linearGradient id="bgBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060914" />
+      <stop offset="50%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#0E162B" />
+    </linearGradient>
+
+    <linearGradient id="cardStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.28" />
+    </linearGradient>
+
+    <radialGradient id="gradAurora1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.32" />
+      <stop offset="55%" stop-color="#4F46E5" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="gradAurora2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.26" />
+      <stop offset="60%" stop-color="#0EA5E9" stop-opacity="0.09" />
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="gradAurora3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.14" />
+      <stop offset="60%" stop-color="#8B5CF6" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="coreHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.38" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="nameGrad" x1="-30%" y1="0%" x2="130%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#BAE6FD" />
+      <stop offset="65%" stop-color="#DDD6FE" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+      <animate attributeName="x1" values="-60%;40%;-60%" dur="7.5s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="80%;180%;80%" dur="7.5s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <linearGradient id="roleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="55%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <linearGradient id="accentFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <linearGradient id="sheenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="coreCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172554" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="glassPill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.82" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.88" />
+    </linearGradient>
+
+    <linearGradient id="waveStroke1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0" />
+      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.22" />
+      <stop offset="70%" stop-color="#818CF8" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="waveStroke2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0" />
+      <stop offset="45%" stop-color="#A855F7" stop-opacity="0.16" />
+      <stop offset="85%" stop-color="#38BDF8" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </linearGradient>
+
+    <pattern id="softDots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#CBD5E1" opacity="0.10" />
+    </pattern>
+
+    <clipPath id="heroClip">
+      <rect x="1" y="1" width="898" height="278" rx="20" />
+    </clipPath>
+
+    <clipPath id="taglineClip">
+      <rect x="52" y="180" width="465" height="32" />
+    </clipPath>
+
+    <!-- Reusable flow paths for both visual curves and animated light packets -->
+    <path id="flowPath1" d="M 594 74 C 632 74, 646 116, 672 132" />
+    <path id="flowPath2" d="M 594 206 C 632 206, 646 164, 672 148" />
+    <path id="flowPath3" d="M 728 132 C 756 116, 768 74, 804 74" />
+    <path id="flowPath4" d="M 728 148 C 756 164, 768 206, 804 206" />
+  </defs>
+
+  <g clip-path="url(#heroClip)">
+    <!-- Base canvas -->
+    <rect x="0" y="0" width="900" height="280" fill="url(#bgBase)" />
+    <rect x="0" y="0" width="900" height="280" fill="url(#softDots)" />
+
+    <!-- Animated organic aurora mesh -->
+    <g class="aurora-1">
+      <circle cx="700" cy="60" r="270" fill="url(#gradAurora1)" />
+    </g>
+    <g class="aurora-2">
+      <circle cx="770" cy="235" r="245" fill="url(#gradAurora2)" />
+    </g>
+    <g class="aurora-3">
+      <circle cx="195" cy="260" r="240" fill="url(#gradAurora3)" />
+    </g>
+
+    <!-- Subtle silk horizon waves -->
+    <path class="wave-drift-1" d="M -40 248 C 160 218, 320 272, 520 244 C 700 218, 810 256, 940 236" fill="none" stroke="url(#waveStroke1)" stroke-width="1.4" />
+    <path class="wave-drift-2" d="M -40 262 C 190 282, 370 232, 570 258 C 730 278, 825 244, 940 254" fill="none" stroke="url(#waveStroke2)" stroke-width="1.1" />
+
+    <!-- Glass diagonal sheen sweep -->
+    <g class="sheen" opacity="0">
+      <polygon points="0,0 180,0 80,280 -100,280" fill="url(#sheenGrad)" />
+    </g>
+
+    <!-- ==================== LEFT: HUMAN & KINETIC TYPOGRAPHY ==================== -->
+
+    <!-- Live emerald availability pill -->
+    <rect x="52" y="42" width="268" height="28" rx="14" fill="#10B981" fill-opacity="0.10" stroke="#34D399" stroke-opacity="0.34" stroke-width="1" />
+    <circle class="ripple" cx="70" cy="56" r="4" fill="none" stroke="#34D399" stroke-width="1.4" />
+    <circle cx="70" cy="56" r="3.6" fill="#34D399" />
+    <text x="85" y="60" fill="#6EE7B7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="0.85">OPEN FOR FREELANCE &amp; OUTSOURCE</text>
+
+    <!-- Hero name with gentle pearl-aurora shimmer -->
+    <text x="52" y="130" fill="url(#nameGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5">Minh Hy</text>
+
+    <!-- Role subtitle -->
+    <text x="52" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19">
+      <tspan fill="url(#roleGrad)" font-weight="700">Backend Engineer</tspan>
+      <tspan dx="8" fill="#475569">·</tspan>
+      <tspan dx="8" fill="#94A3B8" font-size="15.5" font-weight="400">Systems, APIs &amp; Cloud</tspan>
+    </text>
+
+    <!-- Remotion-style kinetic rotating taglines -->
+    <g clip-path="url(#taglineClip)">
+      <text class="phrase-1" x="52" y="201" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400">Building reliable backends that quietly power great products.</text>
+      <text class="phrase-2" opacity="0" x="52" y="201" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400">Turning complex ideas into clean, scalable APIs.</text>
+      <text class="phrase-3" opacity="0" x="52" y="201" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400">Thoughtful architecture · Clear collaboration · Production ready.</text>
+    </g>
+
+    <!-- Sleek gradient accent bar -->
+    <rect x="52" y="226" width="84" height="3.5" rx="1.75" fill="url(#accentFlow)" />
+    <rect x="144" y="226" width="14" height="3.5" rx="1.75" fill="#38BDF8" fill-opacity="0.35" />
+
+    <!-- ==================== RIGHT: LIVING ARCHITECTURE MOTION GRAPHIC ==================== -->
+
+    <!-- Twinkling ambient bokeh particles -->
+    <circle class="twinkle-1" cx="554" cy="136" r="1.8" fill="#38BDF8" />
+    <circle class="twinkle-2" cx="642" cy="48" r="1.6" fill="#C084FC" />
+    <circle class="twinkle-3" cx="764" cy="238" r="1.8" fill="#34D399" />
+    <circle class="twinkle-1" cx="852" cy="144" r="1.5" fill="#818CF8" />
+    <circle class="twinkle-2" cx="654" cy="234" r="1.4" fill="#38BDF8" />
+
+    <!-- Flowing architectural curves -->
+    <use href="#flowPath1" fill="none" stroke="#38BDF8" stroke-opacity="0.28" stroke-width="1.6" />
+    <use href="#flowPath2" fill="none" stroke="#818CF8" stroke-opacity="0.28" stroke-width="1.6" />
+    <use href="#flowPath3" fill="none" stroke="#C084FC" stroke-opacity="0.28" stroke-width="1.6" />
+    <use href="#flowPath4" fill="none" stroke="#34D399" stroke-opacity="0.28" stroke-width="1.6" />
+
+    <!-- Animated glowing data-packets streaming along the curves -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="2.9s" repeatCount="indefinite" begin="0s" />
+      <circle r="6.5" fill="#38BDF8" fill-opacity="0.32">
+        <animateMotion dur="2.9s" repeatCount="indefinite" begin="0s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath1" />
+        </animateMotion>
+      </circle>
+      <circle r="2.8" fill="#E0F2FE">
+        <animateMotion dur="2.9s" repeatCount="indefinite" begin="0s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath1" />
+        </animateMotion>
+      </circle>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="3.3s" repeatCount="indefinite" begin="-1.2s" />
+      <circle r="6.5" fill="#818CF8" fill-opacity="0.32">
+        <animateMotion dur="3.3s" repeatCount="indefinite" begin="-1.2s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath2" />
+        </animateMotion>
+      </circle>
+      <circle r="2.8" fill="#E0E7FF">
+        <animateMotion dur="3.3s" repeatCount="indefinite" begin="-1.2s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath2" />
+        </animateMotion>
+      </circle>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="3.1s" repeatCount="indefinite" begin="-0.6s" />
+      <circle r="6.5" fill="#C084FC" fill-opacity="0.32">
+        <animateMotion dur="3.1s" repeatCount="indefinite" begin="-0.6s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath3" />
+        </animateMotion>
+      </circle>
+      <circle r="2.8" fill="#F3E8FF">
+        <animateMotion dur="3.1s" repeatCount="indefinite" begin="-0.6s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath3" />
+        </animateMotion>
+      </circle>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.86;1" dur="3.5s" repeatCount="indefinite" begin="-2.0s" />
+      <circle r="6.5" fill="#34D399" fill-opacity="0.32">
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="-2.0s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath4" />
+        </animateMotion>
+      </circle>
+      <circle r="2.8" fill="#D1FAE5">
+        <animateMotion dur="3.5s" repeatCount="indefinite" begin="-2.0s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1">
+          <mpath href="#flowPath4" />
+        </animateMotion>
+      </circle>
+    </g>
+
+    <!-- Central luminous core hub -->
+    <g class="core-breathe">
+      <circle cx="700" cy="140" r="80" fill="url(#coreHalo)" />
+    </g>
+    <circle class="orbit-cw" cx="700" cy="140" r="64" fill="none" stroke="#64748B" stroke-opacity="0.32" stroke-width="1" stroke-dasharray="3 7" />
+    <circle class="orbit-ccw" cx="700" cy="140" r="46" fill="none" stroke="url(#orbitStroke)" stroke-width="1.8" stroke-dasharray="78 65" stroke-linecap="round" />
+
+    <!-- Frosted central glass emblem -->
+    <rect x="670" y="110" width="60" height="60" rx="16" fill="url(#coreCardBg)" stroke="url(#roleGrad)" stroke-opacity="0.7" stroke-width="1.4" />
+    <!-- Minimalist layered stack icon inside core -->
+    <path d="M 700 125 L 716 133 L 700 141 L 684 133 Z" fill="#38BDF8" fill-opacity="0.22" stroke="#38BDF8" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M 684 141 L 700 149 L 716 141" fill="none" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 684 148.5 L 700 156.5 L 716 148.5" fill="none" stroke="#C084FC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- 4 Floating glassmorphic capability pills -->
+    <g class="float-a">
+      <rect x="528" y="57" width="68" height="32" rx="16" fill="url(#glassPill)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" />
+      <circle cx="545" cy="73" r="3.2" fill="#38BDF8" />
+      <text x="556" y="77" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600">API</text>
+    </g>
+
+    <g class="float-b">
+      <rect x="522" y="190" width="74" height="32" rx="16" fill="url(#glassPill)" stroke="#818CF8" stroke-opacity="0.4" stroke-width="1" />
+      <circle cx="539" cy="206" r="3.2" fill="#818CF8" />
+      <text x="550" y="210" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600">Data</text>
+    </g>
+
+    <g class="float-c">
+      <rect x="798" y="57" width="78" height="32" rx="16" fill="url(#glassPill)" stroke="#C084FC" stroke-opacity="0.4" stroke-width="1" />
+      <circle cx="815" cy="73" r="3.2" fill="#C084FC" />
+      <text x="826" y="77" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600">Cloud</text>
+    </g>
+
+    <g class="float-d">
+      <rect x="798" y="190" width="78" height="32" rx="16" fill="url(#glassPill)" stroke="#34D399" stroke-opacity="0.4" stroke-width="1" />
+      <circle cx="815" cy="206" r="3.2" fill="#34D399" />
+      <text x="826" y="210" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600">Scale</text>
+    </g>
+  </g>
+
+  <!-- Luminous glass border -->
+  <rect x="1" y="1" width="898" height="278" rx="20" fill="none" stroke="url(#cardStroke)" stroke-width="1.2" />
+</svg>
