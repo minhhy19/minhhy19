@@ -28,9 +28,16 @@
 <br />
 <br />
 
-<!-- Customize icons to match your real stack (https://skillicons.dev) -->
+<!-- Customize badges to match your real stack -->
 <p>
-  <img src="https://skillicons.dev/icons?i=go,ts,nodejs,py,postgres,redis,docker,linux&theme=dark" alt="Tech Stack" />
+  <img src="https://img.shields.io/badge/Go-09090B?style=for-the-badge&logo=go&logoColor=FFFFFF" alt="Go" />
+  <img src="https://img.shields.io/badge/TypeScript-09090B?style=for-the-badge&logo=typescript&logoColor=FFFFFF" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Node.js-09090B?style=for-the-badge&logo=nodedotjs&logoColor=FFFFFF" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Python-09090B?style=for-the-badge&logo=python&logoColor=FFFFFF" alt="Python" />
+  <img src="https://img.shields.io/badge/PostgreSQL-09090B?style=for-the-badge&logo=postgresql&logoColor=FFFFFF" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Redis-09090B?style=for-the-badge&logo=redis&logoColor=FFFFFF" alt="Redis" />
+  <img src="https://img.shields.io/badge/Docker-09090B?style=for-the-badge&logo=docker&logoColor=FFFFFF" alt="Docker" />
+  <img src="https://img.shields.io/badge/Linux-09090B?style=for-the-badge&logo=linux&logoColor=FFFFFF" alt="Linux" />
 </p>
 
 <br />

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 32" width="900" height="32" role="img" aria-label="Crimson pulse divider">
+  <defs>
+    <style><![CDATA[
+      .pulse-left {
+        stroke-dasharray: 56 420;
+        animation: shootLeft 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+      .pulse-right {
+        stroke-dasharray: 56 420;
+        animation: shootRight 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+      .center-glow {
+        animation: eyeBeat 3.6s ease-in-out infinite;
+        transform-origin: 450px 16px;
+      }
+      @keyframes shootLeft {
+        0%   { stroke-dashoffset: -56; opacity: 0; }
+        16%  { opacity: 1; }
+        82%  { opacity: 0.75; }
+        100% { stroke-dashoffset: 420; opacity: 0; }
+      }
+      @keyframes shootRight {
+        0%   { stroke-dashoffset: 56; opacity: 0; }
+        16%  { opacity: 1; }
+        82%  { opacity: 0.75; }
+        100% { stroke-dashoffset: -420; opacity: 0; }
+      }
+      @keyframes eyeBeat {
+        0%, 100% { transform: scale(1); opacity: 0.75; }
+        16%      { transform: scale(1.4); opacity: 1; }
+        34%      { transform: scale(1.06); opacity: 0.85; }
+      }
+    ]]></style>
+
+    <linearGradient id="baseLine" gradientUnits="userSpaceOnUse" x1="30" y1="16" x2="870" y2="16">
+      <stop offset="0%" stop-color="#1E1E2E" stop-opacity="0" />
+      <stop offset="22%" stop-color="#3F1D28" stop-opacity="0.72" />
+      <stop offset="50%" stop-color="#E11D48" stop-opacity="0.85" />
+      <stop offset="78%" stop-color="#3F1D28" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#1E1E2E" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="beamL" gradientUnits="userSpaceOnUse" x1="444" y1="16" x2="30" y2="16">
+      <stop offset="0%" stop-color="#FF1E42" />
+      <stop offset="65%" stop-color="#FDA4AF" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="beamR" gradientUnits="userSpaceOnUse" x1="456" y1="16" x2="870" y2="16">
+      <stop offset="0%" stop-color="#FF1E42" />
+      <stop offset="65%" stop-color="#FDA4AF" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="corePulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF1E42" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#FF1E42" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect x="30" y="15.4" width="840" height="1.2" fill="url(#baseLine)" />
+  <path class="pulse-left" d="M 444 16 L 30 16" fill="none" stroke="url(#beamL)" stroke-width="2" stroke-linecap="round" />
+  <path class="pulse-right" d="M 456 16 L 870 16" fill="none" stroke="url(#beamR)" stroke-width="2" stroke-linecap="round" />
+
+  <circle class="center-glow" cx="450" cy="16" r="14" fill="url(#corePulse)" />
+  <path d="M 439 16 L 450 9.5 L 461 16 L 450 22.5 Z" fill="#09090F" stroke="#FF1E42" stroke-width="1.2" />
+  <circle cx="450" cy="16" r="2.3" fill="#FF1E42" />
+</svg>
